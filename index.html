@@ -1,304 +1,257 @@
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Name - Engineering Fresher Resume</title>
-    <style>
-
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 1;
-            padding-top: 50px;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            overflow: auto;
-            background-color: rgba(0,0,0,0.9);
-        }
-
-        .modal-content {
-            margin: auto;
-            display: block;
-            max-width: 800px;
-        }
-
-        .modal img {
-            width: 100%;
-            height: auto;
-        }
-
-        /* Close button for the modal */
-        .close {
-            position: absolute;
-            top: 10px;
-            right: 20px;
-            color: #fff;
-            font-size: 30px;
-            font-weight: bold;
-            cursor: pointer;
-        }
-
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f5f5f5;
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>My Resume</title>
+        <style>
+                        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f8f9fa;
+            color: #495057;
             margin: 0;
             padding: 0;
-        }
+            }
 
-        .container {
+            .container {
             max-width: 800px;
-    margin: 0 auto;
-    /* Specify the path to your background image */
-    background-size: cover; /* Adjust as needed */
-    background-repeat: no-repeat;
-    background-position: center;
-    background-attachment: scroll; 
-    background-size: 80% 25%;
-     background-color: rgba(255, 255, 255, 0.5); /* Add a semi-transparent background to make the content readable */
-    padding: 20px;
-    box-shadow: 0 2px 5px rgba(218, 203, 203, 0.2);
-    position: static; /* Allows the z-index to work */
-    z-index: 1; /* Places it in front of the background */
-        }
+            margin: 50px auto;
+            background-color: #ffffff;
+            padding: 40px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            }
 
-        header {
+            header {
             text-align: center;
-        }
+            padding-bottom: 20px;
+            }
 
-        h1 {
-            font-size: 36px;
-            color: #333;
-            margin: 0;
-        }
+            header h1 {
+            color: #007bff;
+            margin-bottom: 10px;
+            }
 
-        h2 {
-            font-size: 24px;
-            color: #333;
-        }
+            header p {
+            color: #6c757d;
+            }
 
-        p {
-            font-size: 16px;
-            line-height: 1.5;
-            color: #333; /* Text color for both light and dark modes */
-        }
+            section {
+            padding: 20px 0;
+            }
+            
 
-        .section {
+            .section-title {
+            font-size: 32px;
+            color: #343a40;
+            border-bottom: 2px solid #007bff;
+            padding-bottom: 10px;
             margin-bottom: 20px;
-        }
+            }
 
-        ul {
-            list-style-type:square;
-            margin-left: 20px;
-        }
+            .section-content {
+            line-height: 1.6;
+            }
 
-        /* Stylish top navigation bar */
-        .topnav {
+            .skills {
+            display: flex;
+            flex-wrap: wrap;
+            margin: -5px;
+            }
+
+            .skills li {
+            list-style: none;
+            margin: 5px;
+            padding: 10px 15px;
+            background-color: #007bff;
+            color: #fff;
+            border-radius: 20px;
+            font-weight: bold;
+            }
+
+            .work-experience,
+            .education {
+            margin-bottom: 30px;
+            }
+
+            .work-experience h3,
+            .education h3 {
+            margin-bottom: 10px;
+            color: #007bff;
+            }
+
+            .work-experience p,
+            .education p {
+            color: #6c757d;
+            }
+
+            .contact {
+            margin-top: 30px;
+            }
+
+            .contact p {
+            margin: 0;
+            color: #495057;
+            }
+
+            a {
+            color: #007bff;
+            text-decoration: none;
+            transition: color 0.3s ease-in-out;
+            }
+
+            a:hover {
+            color: #0056b3;
+            text-decoration: underline;
+            }
+            .image-container {
+            text-align: center;
+            }
+
+            .centered-image {
+            display: inline-block; /* This is important for centering inline elements */
+            width: 150px; /* Set the width of your image */
+            height: 200px; /* Maintain the aspect ratio */
+            border-radius: 50%; /* Create a circular shape */
+            overflow: hidden; /* Ensure content inside the container doesn't overflow */
+            border: 3px solid #007bff; /* Set the border width and color */
+            }
+
+
+            .experience-item {
+            display: flex;
+            align-items: center;
+            }
+
+            .experience-item img {
+            width: 80px; /* Set the width of your image */
+            height: auto;
+            margin-right: 15px;
+            }
+
+            .experience-details {
+            flex-grow: 1;
+            }
+            .topnav {
             background-color: #333;
             overflow: hidden;
-        }
-
-        .topnav a {
+            text-align:"center";
+            
+            
+            }
+            .topnav a {
             float: left;
             display: block;
             color: #fff;
             text-align: center;
-            padding: 14px 16px;
-            text-decoration: none;
-        }
-
-        .topnav a:hover {
-            background-color: #555;
-        }
-
-        /* Background image */
-        body {
-            background-image: url('genik.jpg'); /* Adjust the URL to your background image */
-            background-position: center;
-    background-attachment: scroll; 
-    background-size: 80% 25%;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-        }
-
-
-        /* Photo */
-        .photo {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
-        .photo img {
-            width: 150px; /* Adjust the size of your photo */
-            border-radius: 50%;
-            border: 4px solid #fff;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-        }
-
-        /* Contact Icons */
-        .contact-icons {
-            text-align:left;
-        }
-
-        .contact-icons img {
-            width: 30px; 
-            margin-right: 10px;
-        }
-
-        .contact-info {
-            color: #666;
-        }
-
-        body.dark-mode {
-            background-color: #333;
-            color: #fff;
-        }
-
-        .topnav.dark-mode {
-            background-color: #111;
-        }
-        .background {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 50%;
-    background-image: url('genik.jpg'); /* Adjust the URL to your background image */
-    background-size: initial;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: scroll;
-    z-index: 1; /* Places it behind the content */
-}
-        #mode-toggle {
-            position: absolute;
-            top: 5px;
-            right: 10px;
-            height: 50px;
-            width: 50px;
-            cursor: pointer;
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-        
-        <div class="topnav">
-            <a href="#contact">Contact</a>
-            <a href="#objective">Objective</a>
-            <a href="#education">Education</a>
-            <a href="#projects">Projects</a>
-            <a href="#experience">Experience</a>
-            <a href="#skills">Skills</a>
-            <a href="#certifications">Certifications</a>
-            <a href="#interests">Interests</a>
-        </div>
-        <div class="photo">
-            <img src="profile.jpg" alt="Your Photo">
-        </div>
-
-        <header>
-            <h1>P S SENTHIL SRINIVAS</h1>
-            <p>Engineering Fresher</p>
-        </header>
-
-        <section class="section" id="contact">
-            <h2>Contact Information</h2>
-            <p> <div class="contact-icons">
-                <img src="mail.png" alt="Email"><span class="contact-info">communicatetosenthilsrinivas@gmail.com</span>
-            </div></p>
-            <p> <div class="contact-icons"><img src="phone.jpeg" alt="Phone"><span class="contact-info">+91 9092573000</span></div></p>
-            <p> <div  class="contact-icons"><img src="linkedin.jpeg" alt="LinkedIn"><a href="https://www.linkedin.com/in/senthil-srinivas-30b903230" target="_blank">LinkedIn Profile</a></div></p>
-        </section>
-
-        <section class="section" id="objective">
-            <h2>Objective</h2>
-            <p> I am a budding engineer looking forward to being a part of shaping the world better through my critical thinking and problem-solving skills. I look forward to learning at every point in life to equip myself and explore various fields of engineering and create a remarkable change in society.</p>
-        </section>
-
-        <section class="section" id="education">
-            <h2>Education</h2>
-            <p>Bachelor Engineering-ECE</p>
-            <p>Sri Saiarm Engineering College, 2025 <b>8.66</b></p>
-        </section>
-
-        <section class="section" id="projects">
-            <h2>Projects</h2>
-            <p>AUTOMATA BIN</p>
-            <ul>
-                <p>A dustbin trained as a deep learning model using CNN. This is a model which classifies waste into two classes namely "biodegradable" and "non-bio degradable". The  model is trained with a predefined image dataset with the waste classified with its respective label </p>
-            </ul>
-            <p>A voice prosthetic for voiceless</p>
-            <ul>
-                <p></p>
-            </ul>
-            <ul>
-                <p>LATEX PLOTTER</p>
-                 <a href="https://senthil1608.github.io/Latexplotter/">CLICK HERE TO VIEW LATEX PLOTTER</a>
-            </ul>
-        </section>
-        <section class="section" id="experience">
-            <h2>EXPERIENCE</h2>
-            <h4>Genik Technologies</h4>
-            <h6>16-08-2023 to present as intern</h6>
-            <ul>
-                <p>As an intern at Genik Technologies, I successfully contributed to the development of an application for rearticle.io, demonstrating my proficiency in software development. Additionally, I served as a backend developer in the Neulab project, where I gained valuable experience in deploying machine learning models, further enhancing my technical skills and expertise.</p>
-            </ul>
-            <h4>Vithai-17 Foundation</h4>
-            <h6>01-07-2023 to present as Founder</h6>
-            <ul>
-                <p>Founder of a NGO leading 20+ young minds witha vision towards promoting sustainable development.The contribution aim towards quality education for everyone to eradicate poverty thus attaining zero hunger. We achived to bring harmony in several oldage homes and orphanages to improve their well being and lift them to a next stage in our society</p>
-            </ul>
-        </section>
-
-        <section class="section" id="skills">
-            <h2>Skills</h2>
-            <ul>
-                <li><h6>FRONT END DEVELOPMENT</h6>Proficient in HTML, CSS, and JavaScript, with a strong foundation in creating visually engaging and responsive web interfaces. </li>
-                <li></li>
-                <li></li>
-                <li></li>
-            </ul>
-        </section>
-
-        <section class="section" id="certifications">
-            <h2>Certifications</h2>
-            <p>Certification Name, Issuing Organization, Year</p>
-        </section>
-
-        <section class="section" id="interests">
-            <h2>Interests</h2>
-            <p>List your hobbies and interests here.</p>
-        </section>
-
-    </div>
-
-
-
-    <img id="mode-toggle" src="but.jpeg" alt="Mode Toggle" onclick="toggleDarkMode()">
-    
-    <script>
-        
-
-        function toggleDarkMode() {
-            var body = document.body;
-            var topnav = document.querySelector('.topnav');
-
-            body.classList.toggle('dark-mode');
-
-            topnav.classList.toggle('dark-mode');
-
-            var modeToggleImage = document.getElementById('mode-toggle');
-            if (body.classList.contains('dark-mode')) {
-                modeToggleImage.src = 'but.jpeg';
-            } else {
-                modeToggleImage.src = 'but.jpeg';
+            padding: 14px 20px;
+            text-decoration: rgb(242, 243, 244);
+            transition: background-color 0.3s; /* Add a transition for a smoother effect */
             }
-        }
-    </script>
-</body>
+            .topnav a:hover {
+            background-color: #555; /* Change the background color on hover */
+            }
+            #home-content {
+            display: block;
+            }
+
+            #contact-content,
+            #experience-content,
+            #skills-content {
+            display: none;
+
+            }
+
+           .center-text {
+            text-align: center;
+            }
+
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <header>
+                <div class="topnav">
+                    <a onclick="showContent('home-content')">ABOUT</a>
+                    <a  onclick="showContent('contact-content')">Conatct</a>
+                    <a onclick="showContent('experience-content')">Experience</a>
+                    <a onclick="showContent('skills-content')">Skills</a>
+             
+
+                </div>
+            <br><br>
+            </header>
+
+        
+            <section id="home-content">
+                <div class="image-container">
+                    <img src="profile.jpg" alt="Your Photo" class="centered-image">
+                  </div>
+                    <h1 class="center-text">P S SENTHIL SRINIVAS</h1>
+                    <p class="center-text">Engineering Fresher</p> 
+              <div class="section-title">About Me</div>
+              <div class="section-content">
+                <p>A budding engineer looking forward to create an impact In the society through critical thinking
+                    and problem solving ability. looking forward to explore all fields of engineering to make the
+                    world a better place</p>
+              </div>
+              <div class="education">
+                <div class="section-title">Education</div>
+                <h3>BE-ECE Sri Sairam Engineering College</h3>
+                <p>2025 — <b>8.66</b></p>
+              </div>
+            </section>
+        
+            <section id="skills-content">
+              <div class="section-title">Skills</div>
+              <ul class="skills">
+                <li>Front end development using html and css</li>
+                <li>Effective in javascript development to support from backend</li>
+                <li>Backend development for machine learning models using python</li>
+                <li>Problem solving using C and python</li>
+                <li>Effective communication and presentation skills with public speaking</li>
+                <li>Embedded systems using microcontroller</li>
+              
+              </ul>
+            </section>
+        
+            <section class="work-experience" id="experience-content">
+                <div class="section-title">Work Experience</div>
+                <div class="experience-item">
+                  <img src="genik.jpg" alt="Phone">
+                  <div class="experience-details">
+                    <h3>Neulab Intern - Genik Technologies Pvt.Ltd</h3>
+                    <p>August 2023 - Present</p>
+                    <p>Worked in Rearticle and Neulab projects as a backend developer to build machine learning
+                      models and a part-time data scientist.</p>
+                  </div>
+                </div>
+               
+            </section>
+        
+
+        
+            <section class="contact" id="contact-content">
+              <div class="section-title">Contact Information</div>
+              <p>communicatetosenthilsrinivas@gmail.com</p>
+              <p>LinkedIn: <a href="https://www.linkedin.com/in/senthil-srinivas-30b903230" target="_blank">linkedin.com/in/yourprofile</a></p>
+              <p>Portfolio: <a href="https://www.yourportfolio.com" target="_blank">yourportfolio.com</a></p>
+            </section>
+          </div>
+
+          <script>
+            function showContent(contentId) {
+              const allSections = document.querySelectorAll('section');
+              allSections.forEach(section => {
+                section.style.display = 'none';
+              });
+        
+              const selectedSection = document.getElementById(contentId);
+              if (selectedSection) {
+                selectedSection.style.display = 'block';
+              }
+            }
+          </script>
+
+    </body>
+
 </html>
